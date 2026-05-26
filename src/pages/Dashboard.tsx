@@ -6,6 +6,8 @@ import TrendingUpIcon from "../assets/icons/TrendingUp.svg";
 import ClockIcon from "../assets/icons/Clock.svg";
 import FilterIcon from "../assets/icons/Filter.svg";
 
+import StatCard from "../components/StatCard";
+
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -18,11 +20,7 @@ export default function Dashboard() {
         </div>
 
         <button className="add-btn">
-          <img
-            src={PlusIcon}
-            alt="plus"
-            className="dashboard-icon"
-          />
+          <img src={PlusIcon} alt="plus" className="dashboard-icon" />
           Add Problem
         </button>
       </div>
@@ -36,11 +34,7 @@ export default function Dashboard() {
             <p>Daily Goal</p>
           </div>
 
-          <img
-            src={TargetIcon}
-            alt="target"
-            className="goal-icon"
-          />
+          <img src={TargetIcon} alt="target" className="goal-icon" />
 
           <div className="progress-row">
             <span>Progress</span>
@@ -54,66 +48,42 @@ export default function Dashboard() {
       </section>
 
       <section className="stats-grid">
-        <div className="stat-card">
-          <span className="stat-title">
-            <img
-              src={FlameIcon}
-              alt="flame"
-              className="small-icon"
-            />
-            Streak
-          </span>
+        <StatCard
+          icon={FlameIcon}
+          alt="flame"
+          title="Streak"
+          value="0 days"
+          colorClass="red"
+        />
 
-          <strong className="red">0 days</strong>
-        </div>
+        <StatCard
+          icon={CheckCircleIcon}
+          alt="check"
+          title="Today"
+          value="0"
+          colorClass="green"
+        />
 
-        <div className="stat-card">
-          <span className="stat-title">
-            <img
-              src={CheckCircleIcon}
-              alt="check"
-              className="small-icon"
-            />
-            Today
-          </span>
+        <StatCard
+          icon={TrendingUpIcon}
+          alt="trending"
+          title="Total Solved"
+          value="0"
+          colorClass="blue"
+        />
 
-          <strong className="green">0</strong>
-        </div>
-
-        <div className="stat-card">
-          <span className="stat-title">
-            <img
-              src={TrendingUpIcon}
-              alt="trending"
-              className="small-icon"
-            />
-            Total Solved
-          </span>
-
-          <strong className="blue">0</strong>
-        </div>
-
-        <div className="stat-card">
-          <span className="stat-title">
-            <img
-              src={ClockIcon}
-              alt="clock"
-              className="small-icon"
-            />
-            In Progress
-          </span>
-
-          <strong className="orange">0</strong>
-        </div>
+        <StatCard
+          icon={ClockIcon}
+          alt="clock"
+          title="In Progress"
+          value="0"
+          colorClass="orange"
+        />
       </section>
 
       <section className="filter-card">
         <div className="filter-left">
-          <img
-            src={FilterIcon}
-            alt="filter"
-            className="filter-icon"
-          />
+          <img src={FilterIcon} alt="filter" className="filter-icon" />
 
           <select>
             <option>All Difficulties</option>

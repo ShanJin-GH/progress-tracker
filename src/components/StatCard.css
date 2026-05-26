@@ -1,0 +1,44 @@
+.stat-card {
+  flex: 1 1 220px;
+  min-width: 180px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
+  border-radius: 10px;
+  padding: 22px;
+  box-sizing: border-box;
+}
+
+.stat-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #475569;
+}
+
+.small-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 28px;
+}
+
+.blue {
+  color: #2563eb;
+}
+
+.green {
+  color: #00a63e;
+}
+
+.red {
+  color: #ff3b00;
+}
+
+.orange {
+  color: #d97706;
+}

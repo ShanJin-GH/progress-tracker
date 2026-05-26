@@ -3,12 +3,15 @@
   min-height: 100vh;
   background: #f8fafc;
   padding: 32px 56px;
+  box-sizing: border-box;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .dashboard-header h1 {
@@ -36,25 +39,34 @@
   cursor: pointer;
 }
 
+.dashboard-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .section-title {
   margin-top: 28px;
   font-size: 22px;
 }
 
 .goal-card {
-  width: 430px;
+  width: 100%;
+  max-width: 430px;
   background: white;
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
   border-radius: 10px;
   padding: 24px;
   position: relative;
+  box-sizing: border-box;
 }
 
-.goal-card svg {
+.goal-icon {
   position: absolute;
   right: 24px;
   top: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .goal-card h3 {
@@ -87,31 +99,11 @@
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 18px;
   margin-top: 28px;
-}
-
-.stat-card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
-  border-radius: 10px;
-  padding: 22px;
-}
-
-.stat-card span {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  color: #475569;
-}
-
-.stat-card strong {
-  display: block;
-  margin-top: 12px;
-  font-size: 28px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .filter-card {
@@ -124,12 +116,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .filter-left {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
+}
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
 }
 
 select {
@@ -140,18 +140,27 @@ select {
   font-size: 16px;
 }
 
-.blue {
-  color: #2563eb;
-}
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 24px;
+  }
 
-.green {
-  color: #00a63e;
-}
+  .dashboard-header h1 {
+    font-size: 34px;
+  }
 
-.red {
-  color: #ff3b00;
-}
+  .add-btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-.orange {
-  color: #d97706;
+  .filter-card,
+  .filter-left {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  select {
+    width: 100%;
+  }
 }
